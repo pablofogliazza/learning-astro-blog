@@ -13,7 +13,7 @@ const identity = {
 const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Writing Docs']
 
 const happy = true
-const finished = false
+const finished = true
 const goal = 3
 
 const skillColor = 'navy'
@@ -22,6 +22,9 @@ const textCase = 'uppercase'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+	<h1>The current URL is: {Astro.url}</h1>
+	<h1>The current URL pathname is: {Astro.url.pathname}</h1>
+	<h1>The current URL origin is: {Astro.url.origin}</h1>
 	<h2>... and my new Astro site!</h2>
 
 	<p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>

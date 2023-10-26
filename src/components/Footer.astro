@@ -2,16 +2,34 @@
 import Social from './Social.astro'
 ---
 
-<style>
-	footer {
-		display: flex;
-		gap: 1rem;
-		margin-top: 2rem;
+<footer class="footer">
+	<div class="footer__container">
+		<p class="footer__copyright">&copy; 2023 &mdash; Todos los derechos reservados.</p>
+		<Social socialName="X" socialUrl="https://twitter.com/pablofogliazza" />
+		<Social socialName="Github" socialUrl="https://github.com/pablofogliazza" />
+		<Social socialName="Linkedin" username="https://www.linkedin.com/in/pablofogliazza/" />
+	</div>
+</footer>
+<style lang="scss">
+	.footer {
+		border-top: 1px solid #ffffff11;
+		padding-top: 20px;
+
+		&__container {
+			margin: 0 auto;
+			max-width: min(80%, 960px);
+
+			display: flex;
+			gap: 10px;
+		}
+
+		&__copyright {
+			font-family: var(--font-sans);
+			font-size: 14px;
+			line-height: 1;
+			color: var(--color-text);
+			font-weight: 400;
+			opacity: 0.7;
+		}
 	}
 </style>
-
-<footer>
-	<Social platform="twitter" username="astrodotbuild" />
-	<Social platform="github" username="withastro" />
-	<Social platform="youtube" username="astrodotbuild" />
-</footer>

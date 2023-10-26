@@ -1,8 +1,10 @@
 ---
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+
+import '@fontsource-variable/inter'
 import '../styles/global.css'
-const { pageTitle } = Astro.props;
+const { pageTitle } = Astro.props
 ---
 
 <html lang="en">
@@ -11,11 +13,11 @@ const { pageTitle } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
+		<title>{pageTitle} &middot; UI Designer & Front-end Developer &middot; pablofogliazza.dev</title>
+		<meta name="description" content="UI Designer & Front-end Developer. Web developer with 17+ years of experience specializing in converting design into code." />
 	</head>
 	<body>
 		<Header />
-		<h1>{pageTitle}</h1>
 		<slot />
 		<Footer />
 		<script>
@@ -23,3 +25,28 @@ const { pageTitle } = Astro.props;
 		</script>
 	</body>
 </html>
+
+<style is:global>
+	html {
+		--color-text: #1b2025;
+		--color-accent: #42bba1;
+		--color-background: #f1f5f9;
+
+		background-color: var(--color-background);
+		font-family: sans-serif;
+	}
+	html.dark {
+		--color-text: #f1f5f9;
+		--color-accent: #42bba1;
+		--color-background: #1b2025;
+
+		background-color: var(--color-background);
+	}
+	body {
+		font-family: 'Inter Variable', sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 1;
+		padding: 1rem;
+	}
+</style>

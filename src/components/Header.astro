@@ -1,11 +1,29 @@
 ---
 import Hamburger from './Hamburger.astro'
+import ThemeIcon from './ThemeIcon.astro'
 import Navigation from './Navegation.astro'
+import Brand from './Brand.astro'
 ---
 
-<header>
-	<nav>
-		<Hamburger />
+<header class="header">
+	<div class="header__container">
+		<Brand />
 		<Navigation />
-	</nav>
+		<ThemeIcon />
+	</div>
 </header>
+
+<style lang="scss">
+	.header {
+		border-bottom: 1px solid #ffffff11;
+
+		&__container {
+			margin: 0 auto;
+			max-width: min(80%, 960px);
+
+			display: grid;
+			grid-template-columns: 1fr 2fr 1fr;
+			align-items: center;
+		}
+	}
+</style>

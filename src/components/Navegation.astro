@@ -2,9 +2,52 @@
 
 ---
 
-<div class="nav-links">
-	<a href="/">Home</a>
-	<a href="/about">About</a>
-	<a href="/blog">Blog</a>
-	<a href="/tags/">Etiquetas</a>
-</div>
+<nav class="navegation">
+	<a class={Astro.url.pathname === '/' ? 'navegation__link active' : 'navegation__link'} href="/">Home</a>
+	<a class={Astro.url.pathname === '/about' ? 'navegation__link active' : 'navegation__link'} href="/about">About</a>
+	<a class={Astro.url.pathname === '/blog' ? 'navegation__link active' : 'navegation__link'} href="/blog">Blog</a>
+	<!-- <a href="/tags/">Etiquetas</a> -->
+	<a class={Astro.url.pathname === '/portfolio' ? 'navegation__link active' : 'navegation__link'} href="/portfolio">Portfolio</a>
+	<a class={Astro.url.pathname === '/contact' ? 'navegation__link active' : 'navegation__link'} href="/contact">Contact</a>
+</nav>
+
+<style lang="scss">
+	.navegation {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+		//border: 1px solid deeppink;
+
+		&__link {
+			display: inline-block;
+			font-family: var(--font-sans);
+			font-size: 14px;
+			line-height: 1;
+			text-decoration: none;
+			color: var(--color-text);
+			font-weight: 400;
+			padding-top: 5px;
+			padding-bottom: 20px;
+			text-transform: capitalize;
+			border-bottom: 1px solid transparent;
+
+			&:hover,
+			&:focus {
+				color: var(--color-accent);
+			}
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+			}
+
+			&.active {
+				border-bottom: 1px solid var(--color-accent);
+			}
+		}
+	}
+</style>
